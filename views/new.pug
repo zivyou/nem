@@ -1,1 +1,16 @@
-h1 hello?
+doctype html
+html(lang="en")
+    head
+    body
+        p Title:        Content:
+        each item in allArticles
+          p #{item.title}  #{item.content}
+        form(method="POST", action="/article/new")
+          div.form-group
+            label(for="title") Title:
+            input(type="text", name="title")
+          div.form-group
+            label(for="content") content:
+            input(type="text", name="title")
+
+          button(type='submit') Submit
