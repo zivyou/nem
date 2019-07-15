@@ -42,9 +42,7 @@ app.get('/article/new', (req, res, next)=>{
 
 
 app.post('/article/new', (req, res, next)=>{
-    // let article = JSON.parse(req.body);
-    console.log("posting...", req.body);
-    let article = {"title":"test article", content:"this is  a test article"};
+    let article = {"title": req.body.title, "content": req.body.content};
     mongoClient.connect(dbUrl, (err, mongo)=>{
         if (err){
             console.error("connect to db failed.");
